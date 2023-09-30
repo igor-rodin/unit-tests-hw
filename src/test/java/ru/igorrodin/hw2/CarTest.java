@@ -3,7 +3,6 @@ package ru.igorrodin.hw2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -13,7 +12,6 @@ public class CarTest {
     @BeforeEach
     public void init() {
         car = new Car("Renault", "Kaptur", 2016);
-        car.testDrive();
     }
 
     /**
@@ -39,6 +37,7 @@ public class CarTest {
      */
     @Test
     public void carShouldHaveSpeed60InTestDrive() {
+        car.testDrive();
         int carSpeed = car.getSpeed();
         assertThat(carSpeed).isEqualTo(60);
     }
@@ -49,6 +48,7 @@ public class CarTest {
      */
     @Test
     public void carShouldHaveZeroSpeedInParkModeAfterTestDrive() {
+        car.testDrive();
         car.park();
         int carSpeed = car.getSpeed();
         assertThat(carSpeed).isEqualTo(0);
